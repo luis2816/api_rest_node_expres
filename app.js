@@ -1,13 +1,13 @@
 // app.js
 const express = require('express');
 const bodyParser = require('body-parser');
-//const db = require('./db');
+const db = require('./db');
 
 const app = express();
 const port = 3000;
 
 
-/*app.use(bodyParser.json());
+app.use(bodyParser.json());
 
 // Obtener todos los libros
 app.get('/libros', (req, res) => {
@@ -18,14 +18,14 @@ app.get('/libros', (req, res) => {
       res.json(result);
     }
   });
-});*/
+});
 
 app.get('/hola', (req, res) => {
     res.send('Hola, bienvenido');
   });
 
 // Obtener un libro por ID
-/*app.get('/libros/:id', (req, res) => {
+app.get('/libros/:id', (req, res) => {
   const libroId = req.params.id;
   db.query('SELECT * FROM libros WHERE id = ?', [libroId], (err, result) => {
     if (err) {
@@ -36,9 +36,9 @@ app.get('/hola', (req, res) => {
       res.json(result[0]);
     }
   });
-});*/
+});
 
-/*
+
 // Crear un nuevo libro
 app.post('/libros', (req, res) => {
   const { titulo, autor, anio_publicacion } = req.body;
@@ -79,7 +79,7 @@ app.delete('/libros/:id', (req, res) => {
     }
   });
 });
-*/
+
 app.listen(port, () => {
   console.log(`Servidor escuchando en el puerto ${port}`);
 });
