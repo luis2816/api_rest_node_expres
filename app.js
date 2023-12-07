@@ -20,7 +20,7 @@ app.get('/libros', (req, res) => {
   });
 });*/
 
-app.get('', (req, res) => {
+app.get('/hola', (req, res) => {
     res.send('Hola, bienvenido');
   });
 
